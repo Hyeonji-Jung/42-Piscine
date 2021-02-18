@@ -1,2 +1,5 @@
-    Name                  Cache name                                 Expires
-* hyeojung@42SEOUL.KR   API:5F558E51-6093-4D52-92EC-1243A75D1FB9   Feb 17 20:36:49 2021
+Credentials cache: API:62AA2576-3920-402D-BBA6-D7E33EC6C95A
+        Principal: hyeojung@42SEOUL.KR
+
+  Issued                Expires               Principal
+Feb 18 11:23:14 2021  Feb 18 21:23:14 2021  krbtgt/42SEOUL.KR@42SEOUL.KR
