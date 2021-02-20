@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 18:44:32 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/20 23:03:59 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/20 23:06:03 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,4 @@ void	ft_putnbr(int nb)
 	else
 		num[0] = '-';
 	write(1, num, strlength(number));
-}
-
-int		main(void)
-{
-	ft_putnbr(2147483647);
-	return (0);
 }
