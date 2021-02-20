@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 17:06:09 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/20 18:34:51 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/20 18:38:13 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,4 @@ void	ft_print_comb2(void)
 		a[0]++;
 		a[1] = '0';
 	}
-}
-
-int		main(void)
-{
-	ft_print_comb2();
-	return (0);
 }
