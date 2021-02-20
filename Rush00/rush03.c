@@ -3,64 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   rush03.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeojung </var/mail/hyeojung>              +#+  +:+       +#+        */
+/*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 11:03:45 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/20 11:53:00 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/02/20 13:27:47 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/02/20 13:57:43 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void 	ft_putchar(char c);
+void	ft_putchar(char c);
 
 void	rush03(int x, int y)
 {
-	int x_index = 1;
-	int y_index = 1;
+	int		xx;
+	int		yy;
 
-	while (y_index <= y)
+	yy = 1;
+	while (yy <= y)
 	{
-		if (y_index == 1 || y_index == y)
+		xx = 1;
+		while (xx <= x)
 		{
-			while (x_index <= x)
-			{
-				if (x_index == 1)
-				{
-					ft_putchar('A');
-				}
-				else if (x_index == x)
-				{
-					ft_putchar('C');
-				}
-				else if (x_index > 1 && x_index < x)
-				{
-					ft_putchar('B');
-				}
-				else
-				{
-					break;
-				}
-				x_index++;
-			}
-			x_index = 1;
-			y_index++;
+			if ((yy == 1 && xx == 1) || (yy == y || xx == 1))
+				ft_putchar('A');
+			else if ((yy == 1 && xx == x) || (yy == y && xx == x))
+				ft_putchar('C');
+			else if ((xx > 1 && xx < x) && (yy == 1 || yy == y))
+				ft_putchar('B');
+			else if ((yy > 1 && yy < y) && (xx == 1 || xx == x))
+				ft_putchar('B');
+			else
+				ft_putchar(' ');
+			xx++;
 		}
-		else if (y_index > 1 && y_index < y)
-		{
-			while (x_index <= x)
-			{
-				if (x_index == 1 || x_index == x)
-				{
-					ft_putchar('B');
-				}
-				else if (x_index > 1 && x_index < x)
-				{
-					ft_putchar(' ');
-				}
-				x_index++;
-			}
-			x_index = 1;
-			y_index++;
-		}
+		yy++;
 		ft_putchar('\n');
 	}
 }
