@@ -6,14 +6,14 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 13:14:18 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/20 14:14:09 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/21 14:09:41 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rush02(int x, int y);
+void	rush(int x, int y);
 
 int		main(void)
 {
-	rush02(1, 5);
+	rush(1, 5);
 	return (0);
 }

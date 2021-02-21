@@ -6,13 +6,13 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 13:27:47 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/20 13:57:43 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/21 14:24:27 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	rush03(int x, int y)
+void	rush(int x, int y)
 {
 	int		xx;
 	int		yy;
@@ -23,7 +23,7 @@ void	rush03(int x, int y)
 		xx = 1;
 		while (xx <= x)
 		{
-			if ((yy == 1 && xx == 1) || (yy == y || xx == 1))
+			if ((yy == 1 && xx == 1) || (yy == y && xx == 1))
 				ft_putchar('A');
 			else if ((yy == 1 && xx == x) || (yy == y && xx == x))
 				ft_putchar('C');

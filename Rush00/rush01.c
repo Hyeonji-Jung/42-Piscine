@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush02.c                                           :+:      :+:    :+:   */
+/*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 13:27:47 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/21 14:20:49 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/02/21 14:06:47 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/02/21 14:32:03 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@ void	ft_putchar(char c);
 
 void	rush(int x, int y)
 {
-	int		xx;
-	int		yy;
+	int	a;
+	int	b;
 
-	yy = 1;
-	while (yy <= y)
+	b = 1;
+	while (b <= y)
 	{
-		xx = 1;
-		while (xx <= x)
+		a = 1;
+		while (a <= x)
 		{
-			if ((yy == 1 && xx == 1) || (yy == 1 && xx == x))
-				ft_putchar('A');
-			else if ((yy == y && xx == 1) || (yy == y && xx == x))
-				ft_putchar('C');
-			else if ((xx > 1 && xx < x) && (yy == 1 || yy == y))
-				ft_putchar('B');
-			else if ((yy > 1 && yy < y) && (xx == 1 || xx == x))
-				ft_putchar('B');
+			if ((b == 1 && a == x) || ((b == y && a == 1) && x != 1 && y != 1))
+				ft_putchar('\\');
+			else if ((b == 1 && a == 1) || (b == y && a == x))
+				ft_putchar('/');
+			else if ((a > 1 && a < x) && (b == 1 || b == y))
+				ft_putchar('*');
+			else if ((b > 1 && b < y) && (a == 1 || a == x))
+				ft_putchar('*');
 			else
 				ft_putchar(' ');
-			xx++;
+			a++;
 		}
-		yy++;
+		b++;
 		ft_putchar('\n');
 	}
 }
