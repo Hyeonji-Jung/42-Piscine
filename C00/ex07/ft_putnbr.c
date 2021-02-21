@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 18:44:32 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/20 23:06:03 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/21 11:36:11 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		strlength(int nb)
 {
-	int length;
+	int	length;
 
 	length = 1;
 	if (nb < 0)
@@ -29,9 +29,9 @@ int		strlength(int nb)
 
 void	ft_putnbr(int nb)
 {
-	int len;
-	int number;
-	char num[13];
+	int		len;
+	int		number;
+	char	num[13];
 
 	len = strlength(nb);
 	number = nb;
