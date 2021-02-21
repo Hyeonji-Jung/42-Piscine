@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 15:53:27 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/21 18:14:30 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/02/21 18:16:22 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/02/21 18:55:26 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
 
-void	ft_print_alphabet(void)
+char	*ft_strcpy(char *dest, char *src)
 {
-	char x[1];
+	int	index;
 
-	x[0] = 'z';
-	while (x[0] >= 'a')
+	index = 0;
+	while(src[index++] != '\0')
 	{
-		write(1, x, 1);
-		x[0]--;
+		dest[index] = src[index];
 	}
+	dest[index] = '\0';
+	return (dest);
+}
+
+int		main(void)
+{
+	char dest[50] = "abcdefgh";
+	printf("my: %s\nnotmy:%s\n", ft_strcpy(dest, "abcd"), strcpy(dest, "abcd"));
 }
