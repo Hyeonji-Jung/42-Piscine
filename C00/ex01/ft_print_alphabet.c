@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 16:44:29 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/21 10:21:13 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/02/21 10:05:20 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/02/21 10:09:19 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_comb(void)
+void	ft_print_alphabet(void)
 {
-	char a[3];
+	char a[1];
 
-	a[0] = '0';
-	while (a[0] <= '6')
+	a[0] = 'a';
+	while (a[0] <= 'z')
 	{
-		a[1] = a[0] + 1;
-		while (a[1] <= '8')
-		{
-			a[2] = a[1] + 1;
-			while (a[2] <= '9')
-			{
-				write(1, a, 3);
-				write(1, ", ", 2);
-				a[2]++;
-			}
-			a[1]++;
-		}
+		write(1, a, 1);
 		a[0]++;
 	}
-	write(1, "789", 3);
 }
