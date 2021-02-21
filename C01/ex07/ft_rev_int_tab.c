@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 13:30:16 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/21 16:16:30 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/21 21:47:34 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	ft_rev_int_tab(int *tab, int size)
 	int	index;
 
 	index = 0;
-	while (index <= size / 2)
+	while (index < --size)
 	{
-		temp = tab[size - index - 1];
-		tab[size - index - 1] = tab[index];
-		tab[index] = temp;
+		temp = tab[index];
+		tab[index] = tab[size];
+		tab[size] = temp;
 		index++;
 	}
 }
