@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 13:14:18 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/21 14:09:41 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/21 15:16:55 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@ void	rush(int x, int y);
 
 int		main(void)
 {
-	rush(1, 5);
+	rush(5, 5);
 	return (0);
 }
