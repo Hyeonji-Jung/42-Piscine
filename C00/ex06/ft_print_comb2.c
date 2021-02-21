@@ -6,11 +6,26 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 17:06:09 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/20 18:38:13 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/21 11:29:05 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	print_comb_sub(char *a, int i)
+{
+	while (a[i] <= '9')
+	{
+		write(1, a, 5);
+		if (a[0] == '9' && a[1] == '8')
+			;
+		else
+			write(1, ", ", 2);
+		a[i]++;
+	}
+	a[i] = '0';
+	a[i - 1]++;
+}
 
 void	ft_print_comb2(void)
 {
@@ -27,16 +42,7 @@ void	ft_print_comb2(void)
 		{
 			while (a[3] <= '9')
 			{
-				while (a[4] <= '9')
-				{
-					write(1, a, 5);
-					if (a[0] == '9' && a[1] == '8') ;
-					else
-						write(1, ", ", 2);
-					a[4]++;
-				}
-				a[4] = '0';
-				a[3]++;
+				print_comb_sub(a, 4);
 			}
 			a[1]++;
 			a[3] = a[0];
