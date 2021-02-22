@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 20:51:59 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 21:54:39 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/22 22:07:11 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ char	*ft_strstr(char *str, char *to_find)
 			point = &str[i];
 			if (check_str(i, j, str, to_find))
 				break;
+		}
 		else
 		{
 			i++;
