@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/22 11:59:44 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 12:28:10 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/02/22 12:45:39 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/02/22 12:53:27 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_numeric(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int		i;
-	char	*a;
 
 	i = 0;
-	a = &str[i];
-	if (str[0] == '\0')
-		return (1);
-	while (*a++)
+	while (str[i++])
 	{
-		if (*a < '0' || *a > '9')
-			return (0);
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
 	}
-	return (1);
+	return (str);
 }

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/22 11:59:44 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 12:28:10 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/02/22 12:14:53 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/02/22 12:33:42 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_numeric(char *str)
+int		ft_str_is_uppercase(char *str)
 {
 	int		i;
 	char	*a;
@@ -21,7 +21,7 @@ int		ft_str_is_numeric(char *str)
 		return (1);
 	while (*a++)
 	{
-		if (*a < '0' || *a > '9')
+		if (*a < 'A' || *a > 'Z')
 			return (0);
 	}
 	return (1);

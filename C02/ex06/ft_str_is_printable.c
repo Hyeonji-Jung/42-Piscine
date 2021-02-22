@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/22 11:59:44 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 12:28:10 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/02/22 12:37:32 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/02/22 12:44:42 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_numeric(char *str)
+int		ft_str_is_printable(char *str)
 {
 	int		i;
-	char	*a;
 
 	i = 0;
-	a = &str[i];
-	if (str[0] == '\0')
-		return (1);
-	while (*a++)
+	while (str[i])
 	{
-		if (*a < '0' || *a > '9')
+		if (!(str[i] < 32 || str[i] > 126))
 			return (0);
+		i++;
 	}
 	return (1);
 }
