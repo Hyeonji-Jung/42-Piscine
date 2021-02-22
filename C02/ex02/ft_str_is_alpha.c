@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/21 21:58:46 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 11:28:32 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/02/22 11:30:04 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/02/22 11:57:54 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char* src, unsigned int n)
+int		ft_str_is_alpha(char *str)
 {
-	int	i;
+	int		i;
+	char	*a;
 
 	i = 0;
-	while (n-- > 0)
+	a = &str[i];
+	if (str[0] == '\0')
+		return (1);
+	while (*a++)
 	{
-		if (src[i] != '\0')
-			dest[i] = src[i];
-		else
-			dest[i] = '\0';
-		i++;
+		if ((*a >= 'a' && *a <= 'z') || (*a >= 'A' && *a <= 'Z'))
+			return (1);
 	}
-	return (dest);
+	return (0);
 }
