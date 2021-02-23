@@ -6,23 +6,24 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 11:30:04 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 11:57:54 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/23 15:30:21 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_str_is_alpha(char *str)
 {
 	int		i;
-	char	*a;
+	char	c;
 
 	i = 0;
-	a = &str[i];
-	if (str[0] == '\0')
+	if (!str[0])
 		return (1);
-	while (*a++)
+	while (str[i])
 	{
-		if ((*a >= 'a' && *a <= 'z') || (*a >= 'A' && *a <= 'Z'))
+		c = str[i];
+		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 			return (1);
+		i++;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 15:26:06 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 17:06:54 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/23 18:10:04 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@ void	dec_to_hex(char c)
 	char	hex;
 
 	dec = c;
-	if (dec == 0)
-	{
-		write(1, "0", 1);
-		return ;
-	}
-	dec_to_hex(dec / 16);
 	if (dec % 16 < 10)
 	{
 		hex = dec % 16 + '0';
@@ -46,6 +40,7 @@ void	ft_putstr_non_printable(char *str)
 		if (str[i] < 32 || str[i] > 126)
 		{
 			write(1, "\\", 1);
+			dec_to_hex(str[i] / 16);
 			dec_to_hex(str[i]);
 		}
 		else

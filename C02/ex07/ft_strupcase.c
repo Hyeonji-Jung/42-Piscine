@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 12:45:39 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 12:51:06 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/23 15:37:04 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@ char	*ft_strupcase(char *str)
 	int		i;
 
 	i = 0;
-	while (str[i++])
+	while (str[i])
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
 			str[i] -= 32;
+		i++;
 	}
 	return (str);
 }

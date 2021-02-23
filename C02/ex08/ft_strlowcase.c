@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 12:45:39 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 12:53:27 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/23 15:44:06 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@ char	*ft_strlowcase(char *str)
 	int		i;
 
 	i = 0;
-	while (str[i++])
+	while (str[i])
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
 			str[i] += 32;
+		i++;
 	}
 	return (str);
 }

@@ -6,23 +6,20 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 12:14:53 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 12:33:42 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/23 15:35:35 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_str_is_uppercase(char *str)
 {
 	int		i;
-	char	*a;
 
 	i = 0;
-	a = &str[i];
-	if (str[0] == '\0')
-		return (1);
-	while (*a++)
+	while (str[i])
 	{
-		if (*a < 'A' || *a > 'Z')
+		if (str[i] < 'A' || str[i] > 'Z')
 			return (0);
+		i++;
 	}
 	return (1);
 }

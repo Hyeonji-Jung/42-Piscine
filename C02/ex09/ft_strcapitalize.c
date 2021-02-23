@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 12:54:26 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 17:11:12 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/23 15:52:57 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strcapitalize(char *str)
 	if (str[0] >= 'a' && str[0] <= 'z')
 		str[0] -= 32;
 	i = 1;
-	while (str[i++])
+	while (str[i])
 	{
 		if (str[i - 1] >= 'a' && str[i - 1] <= 'z')
 			to_lowercase(&str[i]);
@@ -39,6 +39,7 @@ char	*ft_strcapitalize(char *str)
 			to_lowercase(&str[i]);
 		else
 			to_uppercase(&str[i]);
+		i++;
 	}
 	return (str);
 }

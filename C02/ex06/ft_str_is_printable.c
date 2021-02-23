@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 12:37:32 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 12:44:42 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/23 15:35:23 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_str_is_printable(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!(str[i] < 32 || str[i] > 126))
+		if (str[i] < 32 || str[i] > 126)
 			return (0);
 		i++;
 	}
