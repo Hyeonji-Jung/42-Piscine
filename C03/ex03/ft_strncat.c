@@ -6,24 +6,24 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 20:38:03 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/24 16:02:27 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/24 16:17:52 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int				len;
 	unsigned int	i;
+	char 			*str;
 
-	len = 0;
-	while (dest[len]cd )
-		len++;
 	i = 0;
-	while (src[i] && i < nb)
+	str = dest;
+	while (*dest)
+		dest++;
+	while (*src && i < nb)
 	{
-		dest[len] = src[i];
-		len++;
+		*dest++ = *src++;
 		i++;
 	}
-	return (dest);
+	*dest = '\0';
+	return (str);
 }

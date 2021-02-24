@@ -6,44 +6,29 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 20:51:59 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 22:07:11 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/24 17:15:57 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		check_str(int i, int j, char *str, char *to_find)
-{
-	while (str[i++] == to_find[j++])
-	{
-		if (!to_find[j + 1])
-			return (1);
-	}
-	return (0);
-}
-
 char	*ft_strstr(char *str, char *to_find)
 {
-	char *point;
-	int i;
-	int j;
+	char	*temp;
 
-	i = 0;
-	j = 0;
-	while (str[i])
+	temp = to_find;
+	while (*str)
 	{
-		point = NULL;
-		if (str[i] == to_find[j])
+		if (*str == *to_find)
 		{
-			point = &str[i];
-			if (check_str(i, j, str, to_find))
-				break;
+			str++;
+			to_find++;
+			if (!(*to_find))
+				return (str - (to_find - temp));
 		}
 		else
 		{
-			i++;
-			j = 0;
+			str++;
+			to_find = temp;
 		}
 	}
-	return (point);
+	return (0);
 }
