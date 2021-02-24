@@ -6,24 +6,20 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 18:06:24 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/22 19:22:02 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:37:39 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strcmp(char *s1, char *s2)
 {
 	int i;
-	int re;
 
 	i = 0;
-	while (s1[i] || s2[i])
+	while (s1[i] && s2[i])
 	{
 		if (s1[i] != s2[i])
-		{
-			re = s1[i] - s2[i];
-			return (re);
-		}
+			return (s1[i] - s2[i]);
 		i++;
 	}
-	return (0);
+	return (s1[i] - s2[i]);
 }
