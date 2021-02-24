@@ -6,21 +6,23 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 21:58:46 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/23 20:16:50 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/24 11:08:04 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (n-- > 0)
+	while (src[i] && i < n)
 	{
-		if (src[i] != '\0')
-			dest[i] = src[i];
-		else
-			dest[i] = '\0';
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = 0;
 		i++;
 	}
 	return (dest);

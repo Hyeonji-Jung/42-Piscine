@@ -6,28 +6,25 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 15:26:06 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/23 18:10:04 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/24 11:42:41 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	dec_to_hex(char c)
+void	to_hex(char c)
 {
-	int		dec;
-	char	hex;
+	int		hex1;
+	int		hex2;
 
-	dec = c;
-	if (dec % 16 < 10)
-	{
-		hex = dec % 16 + '0';
-		write(1, &hex, 1);
-	}
-	else if (dec % 16 >= 10)
-	{
-		hex = dec % 16 + 'a' - 10;
-		write(1, &hex, 1);
-	}
+	hex1 = (c / 16) + '0';
+	hex2 = c % 16;
+	write(1, &hex1, 1);
+	if (c > 9)
+		hex2 += 87;
+	else if (c <= 9)
+		hex2 += '0';
+	write(1, &hex2, 1);
 }
 
 void	ft_putstr_non_printable(char *str)
@@ -40,8 +37,7 @@ void	ft_putstr_non_printable(char *str)
 		if (str[i] < 32 || str[i] > 126)
 		{
 			write(1, "\\", 1);
-			dec_to_hex(str[i] / 16);
-			dec_to_hex(str[i]);
+			to_hex(str[i]);
 		}
 		else
 			write(1, &str[i], 1);

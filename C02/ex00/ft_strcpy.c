@@ -6,20 +6,20 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 18:16:22 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/23 14:15:57 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/24 11:04:07 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	int	index;
+	int	i;
 
-	index = 0;
-	while (src[index])
+	i = 0;
+	while (src[i])
 	{
-		dest[index] = src[index];
-		index++;
+		dest[i] = src[i];
+		i++;
 	}
-	dest[index] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }
