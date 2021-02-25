@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 15:26:06 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/24 11:42:41 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/25 12:35:06 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,32 @@
 
 void	to_hex(char c)
 {
-	int		hex1;
-	int		hex2;
+	int	h1;
+	int	h2;
 
-	hex1 = (c / 16) + '0';
-	hex2 = c % 16;
-	write(1, &hex1, 1);
-	if (c > 9)
-		hex2 += 87;
-	else if (c <= 9)
-		hex2 += '0';
-	write(1, &hex2, 1);
+	h1 = c / 16;
+	h2 = c % 16;
+	write(1, "\\", 1);
+	if (h1 > 9)
+		h1 += 'a' - 10;
+	else
+		h1 += '0';
+	write(1, &h1, 1);
+	if (h2 > 9)
+		h2 += 'a' - 10;
+	else
+		h2 += '0';
+	write(1, &h2, 1);
 }
 
 void	ft_putstr_non_printable(char *str)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
+	while (*str)
 	{
-		if (str[i] < 32 || str[i] > 126)
-		{
-			write(1, "\\", 1);
-			to_hex(str[i]);
-		}
+		if (!(*str >= 32 && *str <= 126))
+			to_hex(*str);
 		else
-			write(1, &str[i], 1);
-		i++;
+			write(1, str, 1);
+		str++;
 	}
 }

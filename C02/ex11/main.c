@@ -6,13 +6,13 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 16:28:28 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/23 18:14:32 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/25 12:35:42 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	dec_to_hex(char c);
+void	to_hex(int c);
 void	ft_putstr_non_printable(char *str);
 
 int		main(void)
