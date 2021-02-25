@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 16:28:28 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/25 13:21:07 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/02/25 13:09:32 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/02/25 13:12:33 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	to_hex(int c);
-void	ft_putstr_non_printable(char *str);
+char	*ft_strncpy(char *dest, char *src, unsigned int n);
 
 int		main(void)
 {
-	char	c[100] = "Coucou\ntu vas bien ?";
+	char dest[20] = {0,};
+	char *src = "012345";
 
-	ft_putstr_non_printable(c);
+	printf("%s\n", ft_strncpy(dest, src, 4));
 	return (0);
 }
