@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 20:38:03 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/24 16:17:52 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/02/25 13:40:36 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 		dest++;
 	while (*src && i < nb)
 	{
-		*dest++ = *src++;
+		*dest = *src;
 		i++;
+		dest++;
+		src++;
 	}
 	*dest = '\0';
 	return (str);
