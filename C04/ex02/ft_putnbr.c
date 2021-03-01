@@ -5,49 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 18:44:32 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/01 12:24:12 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/01 14:22:53 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/01 15:05:53 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		strlength(int nb)
-{
-	int	length;
-
-	length = 1;
-	if (nb < 0)
-		length++;
-	while (nb / 10 != 0)
-	{
-		nb /= 10;
-		length++;
-	}
-	return (length);
-}
-
 void	ft_putnbr(int nb)
 {
-	int		len;
-	int		number;
-	char	num[12];
+	char	c;
 
-	len = strlength(nb);
-	number = nb;
-	while (len > 0)
+	if (nb == 0)
 	{
-		if (nb >= 0)
-			num[len - 1] = (nb % 10) + '0';
+		write(1, "0", 1);
+		return ;
+	}
+	else if (nb < 0)
+		write(1, "-", 1);
+	while (nb / 10 != 0)
+	{
+		if (nb > 0)
+			c = nb % 10 + '0';
 		else
-			num[len - 1] = (nb % 10) * -1 + '0';
+			c = nb % 10 * (-1) + '0';
+		write (1, &c, 1);
 		if (nb / 10 != 0)
 			nb /= 10;
-		len--;
 	}
-	if (nb >= 0)
-		num[0] = nb + '0';
-	else
-		num[0] = '-';
-	write(1, num, strlength(number));
+	c = nb;
+	write(1, &c, 1);
+}
+
+int	main(void)
+{
+	ft_putnbr(2147483647);
 }

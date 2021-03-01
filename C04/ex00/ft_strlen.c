@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_combn.c                                   :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 23:35:23 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/01 14:04:03 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/01 14:05:06 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/01 14:08:51 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_combn(int n)
+int	ft_strlen(char *str)
 {
+	int len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }

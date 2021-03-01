@@ -6,49 +6,44 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 17:06:09 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/21 11:29:05 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/01 13:03:01 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	print_comb_sub(char *a, int i)
-{
-	while (a[i] <= '9')
-	{
-		write(1, a, 5);
-		if (a[0] == '9' && a[1] == '8')
-			;
-		else
-			write(1, ", ", 2);
-		a[i]++;
-	}
-	a[i] = '0';
-	a[i - 1]++;
-}
-
 void	ft_print_comb2(void)
 {
-	char a[5];
+	char	a[5];
 
 	a[0] = '0';
 	a[1] = '0';
 	a[2] = ' ';
 	while (a[0] <= '9')
 	{
-		a[3] = a[0];
-		a[4] = a[1] + 1;
-		while (a[1] <= '8')
+		a[1] = '0';
+		while (a[1] <= '9')
 		{
-			while (a[3] <= '9')
-			{
-				print_comb_sub(a, 4);
-			}
-			a[1]++;
 			a[3] = a[0];
 			a[4] = a[1] + 1;
+			while (a[3] <= '9')
+			{
+				while (a[4] <= '9')
+				{
+					if (a[0] == '9' && a[1] == '8')
+					{
+						write(1, "98 99", 5);
+						return ;
+					}
+					write(1, a, 5);
+					write(1, ", ", 2);
+					a[4]++;
+				}
+				a[3]++;
+				a[4] = '0';
+			}
+			a[1]++;
 		}
 		a[0]++;
-		a[1] = '0';
 	}
 }
