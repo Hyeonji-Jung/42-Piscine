@@ -6,11 +6,9 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 15:20:04 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/01 15:35:36 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/03 14:56:31 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		ft_atoi(char *str)
 {
@@ -23,6 +21,13 @@ int		ft_atoi(char *str)
 	{
 		if (*str == '-')
 			check_minus *= -1;
+		else if (*str == '+' || *str == ' '
+				|| *str == '\t' || *str == '\v'
+				|| *str == '\n' || *str == '\r'
+				|| *str == '\f')
+			;
+		else
+			return (0);
 		str++;
 	}
 	while (*str >= '0' && *str <= '9')
@@ -32,11 +37,4 @@ int		ft_atoi(char *str)
 		str++;
 	}
 	return (number);
-}
-
-int		main(void)
-{
-	char str[100] = "-+-+-+-+-asdf01234";
-	printf("%s\n", str);
-	printf("%d\n", ft_atoi(str));
 }
