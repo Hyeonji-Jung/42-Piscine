@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 15:51:47 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/03 18:36:47 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/03 17:43:28 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/03 18:08:01 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_recursive_factorial(int nb)
-{
-	if (nb == 0 || nb == 1)
-		return (1);
-	if (nb < 0)
-		return (0);
-	return (nb * ft_recursive_factorial(nb - 1));
-}
+#ifndef FT_H
+#define FT_H
+
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
+#endif

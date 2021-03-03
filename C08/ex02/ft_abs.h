@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 15:51:47 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/03 18:36:47 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/03 18:30:03 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/03 18:32:09 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_recursive_factorial(int nb)
-{
-	if (nb == 0 || nb == 1)
-		return (1);
-	if (nb < 0)
-		return (0);
-	return (nb * ft_recursive_factorial(nb - 1));
-}
+#ifndef FT_ABS_H
+#define FT_ABS_H
+
+#define ABS(Value) ((Value < 0) ? (- Value) : (Value))
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 14:09:59 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/02 15:18:18 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/03 16:48:25 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_putnbr_base(int nbr, char *base)
 	if (check_base(base) == 0)
 		return ;
 	if (nbr == 0)
-		write(1, "0", 1);
+		write(1, &base[0], 1);
 	else if (nbr > 0)
 	{
 		to_base(nbr / i, base, i);

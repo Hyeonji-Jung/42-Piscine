@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_mine.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 12:45:38 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/03 16:18:13 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/03 17:11:23 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/03 17:32:13 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int		is_sep(char c, char *charset)
 {
@@ -23,7 +24,7 @@ int		is_sep(char c, char *charset)
 	return (0);
 }
 
-int		wd_len(char *str, char *charset)
+int		wd_cnt(char *str, char *charset)
 {
 	int		count;
 
@@ -32,16 +33,16 @@ int		wd_len(char *str, char *charset)
 	{
 		if (!is_sep(*str, charset))
 		{
-			++count;
+			count++;
 			while (*str && !is_sep(*str, charset))
-				++str;
+				str++;
 		}
-		++str;
+		str++;
 	}
 	return (count);
 }
 
-void	ftt_strcpy(char *dest, char *from, char *to)
+void	ft_strcpy(char *dest, char *from, char *to)
 {
 	while (from < to)
 		*(dest++) = *(from++);
@@ -51,10 +52,10 @@ void	ftt_strcpy(char *dest, char *from, char *to)
 char	**ft_split(char *str, char *charset)
 {
 	char	**arr;
-	char	*from;
 	int		i;
+	char	*from;
 
-	arr = (char **)malloc(sizeof(char *) * wd_len(str, charset) + 1);
+	arr = (char **)malloc(sizeof(char *) * wd_cnt(str, charset) + 1);
 	i = 0;
 	while (*str)
 	{
@@ -64,7 +65,7 @@ char	**ft_split(char *str, char *charset)
 			while (!is_sep(*str, charset) && *str)
 				str++;
 			arr[i] = (char *)malloc(str - from + 1);
-			ftt_strcpy(arr[i++], from, str);
+			ft_strcpy(arr[i++], from, str);
 		}
 		str++;
 	}
@@ -74,9 +75,9 @@ char	**ft_split(char *str, char *charset)
 
 int		main(void)
 {
-	char	**arr = ft_split("Hello--World--Hi", "--");
-	int i = 0;
+	char	*str = "Hello----Worl d----hihi";
+	char	**arr = ft_split(str, "----");
+	int		i = 0;
 	while (i < 3)
 		printf("%s\n", arr[i++]);
-	return (0);
 }

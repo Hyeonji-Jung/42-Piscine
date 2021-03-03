@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 15:51:47 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/03 18:36:47 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/03 18:11:46 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/03 18:29:16 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_recursive_factorial(int nb)
-{
-	if (nb == 0 || nb == 1)
-		return (1);
-	if (nb < 0)
-		return (0);
-	return (nb * ft_recursive_factorial(nb - 1));
-}
+#ifndef FT_BOOLEAN_H
+#define FT_BOOLEAN_H
+
+#include <unistd.h>
+
+typedef int	t_bool;
+#define EVEN(nb) (nb % 2 == 0) ? 0 : 1
+#define TRUE 1
+#define FALSE 0
+#define EVEN_MSG "I have an even number of arguments.\n"
+#define ODD_MSG "I have an odd number of arguments.\n"
+#define SUCCESS 0
+
+#endif
