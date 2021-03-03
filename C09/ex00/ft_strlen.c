@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 16:03:36 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/03 20:31:42 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/03 20:23:39 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/03 20:24:17 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_power(int nb, int power)
+int		ft_strlen(char *str)
 {
-	int i;
+	int	len;
 
-	i = 1;
-		return (0);
-	if (nb == 0 && power == 0)
-		return (1);
-	else if (nb <= 0 || power <= 0)
-		return (0);
-	while (power > 0)
-	{
-		i *= nb;
-		power--;
-	}
-	return (i);
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }
