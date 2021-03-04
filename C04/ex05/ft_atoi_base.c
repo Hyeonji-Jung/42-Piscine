@@ -5,65 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/02 15:19:30 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/02 17:06:26 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/04 14:32:18 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/04 17:08:44 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int 	ft_strlen(char *str)
+int		base_len(char *base)
 {
-	int		len;
+	int		cnt;
+	int		i;
 
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
+	if (!base[0] || !base[1])
+		return (0);
+	cnt = 0;
+	while (base[cnt])
+	{
+		i = cnt + 1;
+		if (base[cnt] == '+' || base[cnt] == '-' || base[cnt] == ' ')
+			return (0);
+		while (base[i])
+			if (base[cnt] == base[i++])
+				return (0);
+		cnt++;
+	}
+	return (cnt);
 }
 
 int		to_base(int n, int base)
 {
-	int nb;
-	int minus;
-
-	nb = 0;
-	minus = 1;
-	if (n < 0)
-		minus = -1;
-	while (n != 0)
-	{
-		
-	}
-	return (nb);
+	if (n == 0)
+		return (0);
+	return ((n % base) + 10 * to_base(n / base, base));
 }
 
 int		ft_atoi_base(char *str, char *base)
 {
-	int		check_minus;
-	int		n;
+	int	num;
+	int check_minus;
 
+	num = 0;
 	check_minus = 1;
-	n = 0;
-	while (*str && !(*str >= '0' && *str <= '9'))
-	{
-		if (*str == '-')
+	if (base_len(base) == 0)
+		return (0);
+	while ((*str >= 9  && *str <= 13) || *str == ' ')
+		str++;
+	while (*str == '+' || *str == '-')
+		if (*(str++) == '-')
 			check_minus *= -1;
-		str++;
-	}
-	while (*str && *str >= '0' && *str <= '9')
+	while (*str >= '0' && *str <= '9')
 	{
-		n *= 10;
-		n += check_minus * (*str - '0');
-		str++;
-		printf("n: %d\n", n);
+		num *= 10;
+		num += check_minus * (*(str++) - '0');
 	}
-	return (to_base(n, ft_strlen(base)));
-}
-
-int		main(void)
-{
-	char str[100] = "-+-+42";
-	printf("%s\n", str);
-	printf("%d\n", ft_atoi_base(str, "01234567"));
+	return (to_base(num, base_len(base)));
 }

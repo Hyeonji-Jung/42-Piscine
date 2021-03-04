@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 18:27:00 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/02 18:33:06 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/04 15:23:23 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int		main(int argc, char **argv)
 		write(1, &argv[0][i], 1);
 		i++;
 	}
+	write(1, "\n", 1);
 	return (0);
 }
