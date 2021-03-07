@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 15:26:06 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/25 12:35:06 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/07 16:22:57 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	to_hex(char c)
 {
-	int	h1;
-	int	h2;
+	unsigned int	h1;
+	unsigned int	h2;
 
 	h1 = c / 16;
 	h2 = c % 16;

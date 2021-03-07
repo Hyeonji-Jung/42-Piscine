@@ -6,9 +6,22 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 14:32:18 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/04 17:08:44 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/07 17:00:31 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
+
+int		get_index(char c, char *base)
+{
+	int		index;
+
+	index = - 1;
+	while (base[++index])
+		if (c == base[index])
+			return (index);
+	return (- 1);
+}
 
 int		base_len(char *base)
 {
@@ -52,10 +65,19 @@ int		ft_atoi_base(char *str, char *base)
 	while (*str == '+' || *str == '-')
 		if (*(str++) == '-')
 			check_minus *= -1;
-	while (*str >= '0' && *str <= '9')
+	while (*str)
 	{
-		num *= 10;
-		num += check_minus * (*(str++) - '0');
+		if (get_index(*str, base) != -1)
+		{
+			num *= 10;
+			num += check_minus * get_index(*str, base);
+		}
+		str++;
 	}
 	return (to_base(num, base_len(base)));
+}
+
+int		main(void)
+{
+	printf("%d\n", ft_atoi_base("-+-+ynaa", "poneyvif"));
 }
