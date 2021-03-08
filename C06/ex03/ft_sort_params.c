@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 19:42:11 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/02 20:25:51 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/08 14:45:01 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int		ft_strcmp(char *s1, char *s2)
 
 void	sort_argv(int argc, char **argv)
 {
-	int i;
-	int j;
-	char *temp;
+	int		i;
+	int		j;
+	char	*temp;
 
 	i = 1;
 	while (i < argc)
@@ -46,16 +46,4 @@ void	sort_argv(int argc, char **argv)
 		}
 		i++;
 	}
-}
-
-int		main(int argc, char **argv)
-{
-	sort_argv(argc, argv);
-	while (--argc)
-	{
-		while (*argv[argc])
-			write(1, argv[argc]++, 1);
-		write(1, "\n", 1);
-	}
-	return (0);
 }
