@@ -6,11 +6,11 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 17:14:37 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/04 13:02:28 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/08 14:38:47 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int 	ftt_sqrt(int nb)
+int		ftt_sqrt(int nb)
 {
 	long long	i;
 
