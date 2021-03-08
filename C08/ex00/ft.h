@@ -6,12 +6,12 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 17:43:28 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/03 18:08:01 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/08 15:01:52 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_H
-#define FT_H
+# define FT_H
 
 void	ft_putchar(char c);
 void	ft_swap(int *a, int *b);
