@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 20:44:40 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/02 21:10:13 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/08 14:52:14 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(char *src)
 {
-	long long len;
-	char *dest;
+	long long	len;
+	char		*dest;
 
 	len = 0;
 	while (src[len])

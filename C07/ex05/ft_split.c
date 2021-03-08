@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 12:45:38 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/03 16:18:13 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/08 14:53:23 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,4 @@ char	**ft_split(char *str, char *charset)
 	}
 	arr[i] = 0;
 	return (arr);
-}
-
-int		main(void)
-{
-	char	**arr = ft_split("Hello--World--Hi", "--");
-	int i = 0;
-	while (i < 3)
-		printf("%s\n", arr[i++]);
-	return (0);
 }
