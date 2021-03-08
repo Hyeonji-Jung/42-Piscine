@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 15:20:04 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/04 14:59:11 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/08 14:07:59 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_atoi(char *str)
 
 	check_minus = 1;
 	number = 0;
-	while (*str == ' ' || *str == '\t' || *str == '\v' 
+	while (*str == ' ' || *str == '\t' || *str == '\v'
 			|| *str == '\n' || *str == '\r' || *str == '\f')
 		str++;
 	while (*str == '+' || *str == '-')

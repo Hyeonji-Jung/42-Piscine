@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 14:32:18 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/07 17:00:31 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/08 14:13:34 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int		get_index(char c, char *base)
 {
 	int		index;
 
-	index = - 1;
+	index = -1;
 	while (base[++index])
 		if (c == base[index])
 			return (index);
-	return (- 1);
+	return (-1);
 }
 
 int		base_len(char *base)
@@ -60,7 +60,7 @@ int		ft_atoi_base(char *str, char *base)
 	check_minus = 1;
 	if (base_len(base) == 0)
 		return (0);
-	while ((*str >= 9  && *str <= 13) || *str == ' ')
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
 		str++;
 	while (*str == '+' || *str == '-')
 		if (*(str++) == '-')
@@ -75,9 +75,4 @@ int		ft_atoi_base(char *str, char *base)
 		str++;
 	}
 	return (to_base(num, base_len(base)));
-}
-
-int		main(void)
-{
-	printf("%d\n", ft_atoi_base("-+-+ynaa", "poneyvif"));
 }
