@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 11:25:26 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/03 12:30:26 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/08 18:34:38 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_strlen(char *str)
 	return (len);
 }
 
-char	*ft_strcat(char *dest, char *src)
+void	ft_strcat(char *dest, char *src)
 {
 	char *str;
 
@@ -32,7 +32,6 @@ char	*ft_strcat(char *dest, char *src)
 	while (*src)
 		*(dest++) = *(src++);
 	*dest = 0;
-	return (str);
 }
 
 char	*ft_strjoin(int size, char **strs, char *sep)
@@ -46,11 +45,12 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	while (i < size)
 		cnt += ft_strlen(strs[i++]);
 	arr = (char *)malloc(cnt + ft_strlen(sep) * (size - 1) + 1);
-	i = 0;
+	ft_strcat(arr, strs[0]);
+	i = 1;
 	while (i < size)
 	{
-		ft_strcat(arr, strs[i++]);
 		ft_strcat(arr, sep);
+		ft_strcat(arr, strs[i++]);
 	}
 	arr[cnt + ft_strlen(sep) * (size - 1)] = 0;
 	return (arr);
