@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 16:03:36 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/09 18:17:44 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/09 18:09:28 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/09 18:10:23 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_power(int nb, int power)
-{
-	int i;
+#include <stdbool.h>
+#include <stdio.h>
+#include <limits.h>
+#include "ft_find_next_prime.c"
 
-	i = 1;
-	if (nb == 0 && power == 0)
-		return (1);
-	else if (power == 0)
-		return (1);
-	else if (nb <= 0 || power < 0)
-		return (0);
-	while (power > 0)
+int	main(void)
+{
+	int	index;
+
+	index = -2;
+	while (index < 100)
 	{
-		i *= nb;
-		power--;
+		printf("find_next_prime(%d) = %d\n", index, ft_find_next_prime(index));
+		index++;
 	}
-	return (i);
+	printf("find_next_prime(%d) = %d\n", INT_MAX, ft_find_next_prime(INT_MAX));
 }

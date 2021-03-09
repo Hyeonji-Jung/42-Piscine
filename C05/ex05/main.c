@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 16:03:36 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/09 18:17:44 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/09 18:07:56 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/09 18:08:20 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_power(int nb, int power)
-{
-	int i;
+#include <stdio.h>
+#include <limits.h>
+#include "ft_sqrt.c"
 
-	i = 1;
-	if (nb == 0 && power == 0)
-		return (1);
-	else if (power == 0)
-		return (1);
-	else if (nb <= 0 || power < 0)
-		return (0);
-	while (power > 0)
+int	main(void)
+{
+	int number;
+
+	number = -2;
+	while (number < 26)
 	{
-		i *= nb;
-		power--;
+		printf("sqrt(%d) = %d\n", number, ft_sqrt(number));
+		number++;
 	}
-	return (i);
+	printf("sqrt(%d) = %d\n", 1000000, ft_sqrt(1000000));
+	printf("sqrt(%d) = %d\n", INT_MAX, ft_sqrt(INT_MAX));
+	printf("sqrt(%d) = %d\n", INT_MIN, ft_sqrt(INT_MIN));
+	printf("sqrt(%d) = %d\n", 2147395600, ft_sqrt(2147395600));
 }
