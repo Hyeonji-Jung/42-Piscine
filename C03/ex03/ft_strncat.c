@@ -6,14 +6,14 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 20:38:03 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/25 13:40:36 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/09 17:33:28 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
-	char 			*str;
+	char			*str;
 
 	i = 0;
 	str = dest;

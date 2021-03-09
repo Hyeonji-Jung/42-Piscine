@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 19:08:00 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/25 13:38:53 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/09 17:34:50 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n)
 
 	i = 0;
 	while (*s1 && *s2 && i < n)
-	{``
+	{
 		if (*s1 != *s2)
 			return (*s1 - *s2);
 		i++;
