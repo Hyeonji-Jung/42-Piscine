@@ -6,11 +6,9 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 14:32:18 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/08 15:39:44 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/09 17:04:38 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		get_index(char c, char *base)
 {
@@ -75,11 +73,4 @@ int		ft_atoi_base(char *str, char *base)
 		str++;
 	}
 	return (to_base(num, base_len(base)));
-}
-#include <stdio.h>
-int main(void)
-{
-	char a[] = "-yn";
-	char b[] = "poneyvif";
-	printf("%d\n", ft_atoi_base(a, b));
 }

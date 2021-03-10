@@ -5,25 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/25 15:09:08 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/09 21:20:44 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/09 16:40:22 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/09 16:40:46 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include "ft_strlen.c"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
-
-int		main(void)
+int	main(void)
 {
-	char dest1[100] = "abcdef";
-	char dest2[100] = "abcdef";
-	char *src = "012345";
+	char *str;
 
-	printf("ft: %u\n", ft_strlcat(dest1, src, 7));
-	printf("ft: %s\n", dest1);
-	printf("real: %lu\n", strlcat(dest2, src, 7));
-	printf("real: %s\n", dest2);
-	return 0;
+	str = "Hello ";
+	printf("string is \"%s\"\n", str);
+	printf("c  : %lu\n", strlen(str));
+	printf("ft : %d\n", ft_strlen(str));
 }

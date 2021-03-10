@@ -5,25 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/25 15:09:08 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/09 21:20:44 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/09 16:41:48 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/09 16:43:56 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
-
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+#include "ft_putnbr.c"
 
 int		main(void)
 {
-	char dest1[100] = "abcdef";
-	char dest2[100] = "abcdef";
-	char *src = "012345";
-
-	printf("ft: %u\n", ft_strlcat(dest1, src, 7));
-	printf("ft: %s\n", dest1);
-	printf("real: %lu\n", strlcat(dest2, src, 7));
-	printf("real: %s\n", dest2);
-	return 0;
+	ft_putnbr(42);
+	printf(" : putnbr(42)\n");
+	printf("\n");
+	ft_putnbr(4242);
+	printf(" : putnbr(4242)\n");
+	printf("\n");
+	ft_putnbr(20000706);
+	printf(" : putnbr(20000706)\n");
+	printf("\n");
+	ft_putnbr(+2147483647);
+	printf(" : putnbr(2147483647)\n");
+	printf("\n");
+	ft_putnbr(-2147483648);
+	printf(" : putnbr(-2147483648)\n");
+	printf("\n");
 }
