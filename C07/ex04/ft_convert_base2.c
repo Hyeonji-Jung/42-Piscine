@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_convert_base2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 16:03:36 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/11 15:47:44 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/11 22:39:57 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/11 22:41:55 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_power(int nb, int power)
-{
-	int i;
+#include <stdlib.h>
 
-	i = nb;
-	if (power == 0)
-		return (1);
-	if (power < 0)
-		return (1);
-	while (--power)
-		i *= nb;
-	return (i);
+int		base_len(char *base)
+{
+	int		len;
+
+	len = 0;
+	while (base[len])
+		len++;
+	return (len);
 }
