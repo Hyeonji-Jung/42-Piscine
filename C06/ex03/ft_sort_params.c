@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 19:42:11 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/08 14:45:01 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/11 11:05:28 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,25 @@ void	sort_argv(int argc, char **argv)
 		}
 		i++;
 	}
+}
+
+void	ft_putstr(char *str)
+{
+	int		len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	write(1, str, len);
+}
+
+int		main(int argc, char **argv)
+{
+	sort_argv(argc, argv);
+	while (--argc > 0)
+	{
+		ft_putstr(argv[argc]);
+		ft_putstr("\n");
+	}
+	return (0);
 }
