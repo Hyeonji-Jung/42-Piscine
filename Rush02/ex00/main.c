@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 14:39:32 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/13 20:55:09 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/13 22:01:02 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ void	ft_strcpy(char *dest, char *from, char *to)
 
 void	ft_error(char *str)
 {
+	int		i;
+
+	i = 0;
 	while (str[i])
 		write(2, str[i++], 1);
 }

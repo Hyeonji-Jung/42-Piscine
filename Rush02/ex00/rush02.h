@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 18:13:08 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/13 20:40:34 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/13 22:32:49 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-# define DEFAULT_DICT numbers.dict
-# define STR_MAXLEN 
+# define DEFAULT_DICT "numbers.dict"
+# define STR_MAXLEN 1024
 
 typedef struct	s_dict
 {
@@ -30,9 +30,13 @@ typedef struct	s_dict
 extern t_dict	*g_dict;
 extern int		g_filedes;
 
+t_dict	*one_dict(char *key, char *val);
+
+void	ft_strcpy(char *dest, char *from, char *to);
 void	ft_error(char *str);
 void	make_dict(char *file);
 void	put_to_dict(char *str);
+void	link_dict(char *key, char *val);
 
 char	*read_line(void);
 

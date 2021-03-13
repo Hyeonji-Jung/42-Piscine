@@ -6,11 +6,29 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 20:24:55 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/13 20:59:58 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/13 22:31:31 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush02.h"
+
+t_dict	*one_dict(char *key, char *val)
+{
+}
+
+void	link_dict(char *key, char *val)
+{
+	t_dict	*tmp;
+
+	if (!g_dict)
+		g_dict = one_dict(key, val);
+	else
+	{
+		tmp = g_dict;
+		g_dict = one_dict(key, val);
+		g_dict->next = tmp;
+	}
+}
 
 void	put_to_dict(char *str)
 {
@@ -31,6 +49,8 @@ void	put_to_dict(char *str)
 	while (*separator)
 		separator++;
 	val = (char*)malloc(separator - val + 1);
+	ft_strcpy(val, str, separator - 1);
+	link_dict(key, val);
 }
 
 char	*read_line(void)
@@ -60,12 +80,12 @@ void	make_dict(char *file)
 {
 	char	*line;
 
-	if (g_filedes = open(file, O_RDONLY) == -1)
+	if ((g_filedes = open(file, O_RDONLY)) == -1)
 	{
 		ft_error("Can`t open .dict file\n");
 		return ;
 	}
-	while (line = read_line())
+	while ((line = read_line()))
 	{
 		if (!*line)
 			continue ;
