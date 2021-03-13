@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dict.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeojung <hyeojung@student.42seoul.kr      +#+  +:+       +#+        */
+/*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 20:24:55 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/13 22:31:31 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/13 23:03:09 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ char	*read_line(void)
 {
 	char	*ret;
 	int		idx;
+	
 	ret = (char*)malloc(STR_MAXLEN);
 	idx = -1;
 	while (read(g_filedes, &ret[++idx], 1))
