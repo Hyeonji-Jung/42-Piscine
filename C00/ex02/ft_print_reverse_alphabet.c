@@ -6,13 +6,13 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 15:53:27 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/02/21 21:50:35 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/15 19:57:16 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_print_reverse_alphabet(void)
 {
 	char x[1];
 
