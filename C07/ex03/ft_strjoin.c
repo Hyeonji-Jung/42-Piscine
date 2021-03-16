@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 11:25:26 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/08 18:34:38 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/16 22:06:43 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,11 @@ int		ft_strlen(char *str)
 	return (len);
 }
 
-void	ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
-	char *str;
-
-	str = dest;
-	while (*dest)
-		dest++;
 	while (*src)
 		*(dest++) = *(src++);
-	*dest = 0;
+	return (dest);
 }
 
 char	*ft_strjoin(int size, char **strs, char *sep)
@@ -39,19 +34,26 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	char	*arr;
 	int		cnt;
 	int		i;
+	char	*temp;
 
 	cnt = 0;
 	i = 0;
+	if (size == 0)
+	{
+		arr = (char*)malloc(1);
+		arr[0] = 0;
+		return (arr);
+	}
 	while (i < size)
 		cnt += ft_strlen(strs[i++]);
 	arr = (char *)malloc(cnt + ft_strlen(sep) * (size - 1) + 1);
-	ft_strcat(arr, strs[0]);
+	temp = ft_strcat(arr, strs[0]);
 	i = 1;
 	while (i < size)
 	{
-		ft_strcat(arr, sep);
-		ft_strcat(arr, strs[i++]);
+		temp = ft_strcat(temp, sep);
+		temp = ft_strcat(temp, strs[i++]);
 	}
-	arr[cnt + ft_strlen(sep) * (size - 1)] = 0;
+	*temp = 0;
 	return (arr);
 }
