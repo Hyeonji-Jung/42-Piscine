@@ -6,11 +6,24 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 17:06:09 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/15 19:52:54 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/16 11:21:14 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+int		write_comb(char *a)
+{
+	if (a[0] == '9' && a[1] == '8')
+	{
+		write(1, "98 99", 5);
+		return (1);
+	}
+	write(1, a, 5);
+	write(1, ", ", 2);
+	a[4]++;
+	return (0);
+}
 
 void	ft_print_comb2(void)
 {
@@ -29,16 +42,8 @@ void	ft_print_comb2(void)
 			while (a[3] <= '9')
 			{
 				while (a[4] <= '9')
-				{
-					if (a[0] == '9' && a[1] == '8')
-					{
-						write(1, "98 99", 5);
+					if (write_comb(a))
 						return ;
-					}
-					write(1, a, 5);
-					write(1, ", ", 2);
-					a[4]++;
-				}
 				a[3]++;
 				a[4] = '0';
 			}
