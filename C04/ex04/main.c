@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 16:44:41 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/09 16:45:02 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/15 20:46:38 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,27 +47,10 @@ int		main(void)
 	printf("\n");
 	printf("Real Answer : 2147483647\n");
 	fflush(stdout);
-	printf("input number : 2147483647, base \"\v123456789\"\n");
-	write(1, "Your Answer : ", 14);
-	ft_putnbr_base(INT_MAX, "0123456789");
-	printf("\n");
-	printf("Real Answer : 2147483647\n");
-	fflush(stdout);
-	printf("input number : 2147483647, base \"\f123456789\"\n");
-	write(1, "Your Answer : ", 14);
-	ft_putnbr_base(INT_MAX, "0123456789");
-	printf("\n");
-	printf("Real Answer : 2147483647\n");
-	fflush(stdout);
 	printf("input number : 2147483647, base \"\r123456789\"\n");
 	write(1, "Your Answer : ", 14);
 	ft_putnbr_base(INT_MAX, "0123456789");
 	printf("\n");
 	printf("Real Answer : 2147483647\n");
 	fflush(stdout);
-	printf("input number : 2147483647, base \" 123456789\"\n");
-	write(1, "Your Answer : ", 14);
-	ft_putnbr_base(INT_MAX, "0123456789");
-	printf("\n");
-	printf("Real Answer : 2147483647\n");
 }
