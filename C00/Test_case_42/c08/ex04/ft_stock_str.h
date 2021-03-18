@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_stock_str.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: shpark <shpark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 16:03:36 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/16 14:17:40 by hyeojung         ###   ########.fr       */
+/*   Created: 2020/02/05 09:33:25 by shpark            #+#    #+#             */
+/*   Updated: 2020/02/05 09:33:26 by shpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_power(int nb, int power)
-{
-	int i;
+#ifndef FT_STOCK_STR_H
+# define FT_STOCK_STR_H
 
-	if (power == 0)
-		return (1);
-	if (power < 0)
-		return (0);
-	i = nb;
-	while (--power)
-		i *= nb;
-	return (i);
-}
+typedef struct	s_stock_str
+{
+	int			size;
+	char		*str;
+	char		*copy;
+}				t_stock_str;
+
+#endif

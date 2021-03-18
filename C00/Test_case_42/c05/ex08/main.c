@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: shpark <shpark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 16:03:36 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/16 14:17:40 by hyeojung         ###   ########.fr       */
+/*   Created: 2020/01/28 05:55:30 by shpark            #+#    #+#             */
+/*   Updated: 2020/01/30 08:48:16 by shpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_power(int nb, int power)
-{
-	int i;
+#include <stdio.h>
+#include "ft_ten_queens_puzzle.c"
 
-	if (power == 0)
-		return (1);
-	if (power < 0)
-		return (0);
-	i = nb;
-	while (--power)
-		i *= nb;
-	return (i);
+int		main(void)
+{
+	ft_ten_queens_puzzle();
 }

@@ -6,7 +6,7 @@
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:11:46 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/16 22:49:56 by hyeojung         ###   ########.fr       */
+/*   Updated: 2021/03/18 12:57:38 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 
 typedef int	t_bool;
-# define EVEN(nb) (nb % 2 == 0) ? 0 : 1
+# define EVEN(nb) (nb % 2 == 0) ? 1 : 0
 # define TRUE 1
 # define FALSE 0
 # define EVEN_MSG "I have an even number of arguments.\n"

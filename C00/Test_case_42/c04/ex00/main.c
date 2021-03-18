@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: shpark <shpark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 16:03:36 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/16 14:17:40 by hyeojung         ###   ########.fr       */
+/*   Created: 2020/01/28 05:42:52 by shpark            #+#    #+#             */
+/*   Updated: 2020/01/30 08:46:26 by shpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_power(int nb, int power)
-{
-	int i;
+#include <stdio.h>
+#include <string.h>
+#include "ft_strlen.c"
 
-	if (power == 0)
-		return (1);
-	if (power < 0)
-		return (0);
-	i = nb;
-	while (--power)
-		i *= nb;
-	return (i);
+int	main(void)
+{
+	char *str;
+
+	str = "Hello ";
+	printf("string is \"%s\"\n", str);
+	printf("c  : %lu\n", strlen(str));
+	printf("ft : %d\n", ft_strlen(str));
 }

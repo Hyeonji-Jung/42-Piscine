@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: shpark <shpark@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 16:03:36 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/16 14:17:40 by hyeojung         ###   ########.fr       */
+/*   Created: 2020/01/28 03:44:54 by shpark            #+#    #+#             */
+/*   Updated: 2020/01/30 08:42:50 by shpark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_power(int nb, int power)
-{
-	int i;
+#include <stdio.h>
+#include "ft_div_mod.c"
 
-	if (power == 0)
-		return (1);
-	if (power < 0)
-		return (0);
-	i = nb;
-	while (--power)
-		i *= nb;
-	return (i);
+int		main(void)
+{
+	int a;
+	int b;
+	int div;
+	int mod;
+
+	a = 5;
+	b = 2;
+	ft_div_mod(a, b, &div, &mod);
+	printf("%d / %d = %d, left %d\n", a, b, div, mod);
 }
