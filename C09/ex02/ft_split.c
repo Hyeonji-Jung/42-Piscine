@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_mine.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeojung <hyeojung@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 12:16:10 by hyeojung          #+#    #+#             */
-/*   Updated: 2021/03/04 12:45:21 by hyeojung         ###   ########.fr       */
+/*   Created: 2021/03/18 18:01:12 by hyeojung          #+#    #+#             */
+/*   Updated: 2021/03/18 18:01:29 by hyeojung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,25 @@ int		is_sep(char c, char *charset)
 	return (0);
 }
 
-int		wd_cnt(char *str, char *charset)
+int		wd_len(char *str, char *charset)
 {
-	int	cnt;
+	int		count;
 
-	cnt = 0;
+	count = 0;
 	while (*str)
 	{
 		if (!is_sep(*str, charset))
 		{
-			cnt++;
+			++count;
 			while (*str && !is_sep(*str, charset))
-				str++;
+				++str;
 		}
-		str++;
+		++str;
 	}
-	return (cnt);
+	return (count);
 }
 
-void	ft_strcpy(char *dest, char *from, char *to)
+void	ftt_strcpy(char *dest, char *from, char *to)
 {
 	while (from < to)
 		*(dest++) = *(from++);
@@ -54,17 +54,17 @@ char	**ft_split(char *str, char *charset)
 	char	*from;
 	int		i;
 
-	arr = (char **)malloc(sizeof(char *) * wd_cnt(str, charset) + 1);
+	arr = (char **)malloc(sizeof(char *) * wd_len(str, charset) + 1);
 	i = 0;
 	while (*str)
 	{
 		if (!is_sep(*str, charset))
 		{
 			from = str;
-			while (*str && !is_sep(*str, charset))
+			while (!is_sep(*str, charset) && *str)
 				str++;
-			arr[i] = (char *)malloc(str - from + i);
-			ft_strcpy(arr[i++], from, str);
+			arr[i] = (char *)malloc(str - from + 1);
+			ftt_strcpy(arr[i++], from, str);
 		}
 		str++;
 	}
